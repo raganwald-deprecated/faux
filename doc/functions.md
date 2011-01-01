@@ -45,6 +45,7 @@ Finally, you can define a function that takes a callback. You must declare all t
 When Faux expects a function, there are three rules:
 
 *Rule One*: If Faux expects a function and you supply a function, Faux takes the function.
+
 *Rule Two*: If Faux expects a function and you supply something that is not a function but it implements a method called `.toFunction()`, Faux calls `.toFunction()` and accepts the result.
 
 Rule Two is easy to understand. For example, if you use `String.prototype.toFunction()` from [Functional Javascript][functional], every string implements to `.toFunction()` method. Therefore, you can do something like this:
@@ -53,7 +54,7 @@ Rule Two is easy to understand. For example, if you use `String.prototype.toFunc
 
 *Rule Three* is that if Faux expects a function and you supply a hash that is not a function and does not implement the `.toFunction()` method, Faux constructs a function that takes the parameters as an argument and returns a new hash. The new hash consists of each of the keys of your hash, but the values will be interpreted as functions.
 
-And example is worth a thousand words. This example using Rule Three:
+And example is worth a thousand words. This example using Rule Three—
 
     before_display: {
       
@@ -71,7 +72,7 @@ And example is worth a thousand words. This example using Rule Three:
       
     }
 
-Is equivalent to this example using Rule One:
+—is equivalent to this example using Rule One:
 
     before_display: function (params) {
       return {
