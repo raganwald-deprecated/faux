@@ -533,33 +533,44 @@ This code automatically massages any `models` parameter into `model: { models: [
         // insert other calls to .display here
         .end();
 
+More Reading
+---
+
+* [More About Views][v]
+* [Methods][m]
+* [Configuration Options][c]
+* [Functions][f]
 
 *Faux and its documentation is still a work in progress: Future additions to this document may or may not include discussions about handling error codes, directly invoking methods, unobtrusive handlers, and some of the other macros such as `title`, `infers`, `redirects_to`, and `location`.*
 
+**postscript**
+
 *Faux was conceived on August 19, 2010 as "Roweis." A remark by Jeremy Ashkenas that we were creating a "Faux Server API" led to its new name.*
 
-[s]: http://github.com/quirkey/sammy "sammy_js"
-[sinatra]: http://www.sinatrarb.com/
-[couch]: http://couchdb.apache.org/
-[cloud]: http://getcloudkit.com/
-[spa]: http://en.wikipedia.org/wiki/Single_page_application "Single Page Application"
-[haml]: http://haml-lang.com/ "#haml"
-[core]: http://www.ridecore.ca "CORE BMX and Boards"
-[prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
 [aanand]: http://github.com/aanand/
-[jamie]: http://github.com/jamiebikies
-[raganwald]: http://github.com/raganwald
-[functional]: http://osteele.com/sources/javascript/functional/
-[spi]: http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php "The Single Page Interface Manifesto"
-[b]: http://documentcloud.github.com/backbone/
-[mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
-[todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
-[sprout]: http://www.sproutcore.com/
-[wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
-[k]: https://github.com/raganwald/JQuery-Combinators
 [api]: http://www.joelonsoftware.com/articles/APIWar.html "How Microsoft Lost the API War"
-[t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
+[b]: http://documentcloud.github.com/backbone/
+[cloud]: http://getcloudkit.com/
+[core]: http://www.ridecore.ca "CORE BMX and Boards"
+[couch]: http://couchdb.apache.org/
 [cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
-[read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
-[v]: ./doc/more_about_views.md#readme
+[c]: ./doc/config.md#readme
+[functional]: http://osteele.com/sources/javascript/functional/
+[f]: ./doc/functions.md#readme
+[haml]: http://haml-lang.com/ "#haml"
+[jamie]: http://github.com/jamiebikies
+[k]: https://github.com/raganwald/JQuery-Combinators
+[mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
 [m]: ./doc/methods.md#readme
+[prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
+[raganwald]: http://github.com/raganwald
+[read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
+[sinatra]: http://www.sinatrarb.com/
+[spa]: http://en.wikipedia.org/wiki/Single_page_application "Single Page Application"
+[spi]: http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php "The Single Page Interface Manifesto"
+[sprout]: http://www.sproutcore.com/
+[s]: http://github.com/quirkey/sammy "sammy_js"
+[todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
+[t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
+[v]: ./doc/more_about_views.md#readme
+[wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
