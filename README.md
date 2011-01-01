@@ -554,14 +554,14 @@ More Reading
 [core]: http://www.ridecore.ca "CORE BMX and Boards"
 [couch]: http://couchdb.apache.org/
 [cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
-[c]: ./doc/config.md#readme
+[c]: /unspace/faux/doc/config.md#readme
 [functional]: http://osteele.com/sources/javascript/functional/
-[f]: ./doc/functions.md#readme
+[f]: /unspace/faux/doc/functions.md#readme
 [haml]: http://haml-lang.com/ "#haml"
 [jamie]: http://github.com/jamiebikies
 [k]: https://github.com/raganwald/JQuery-Combinators
 [mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
-[m]: ./doc/methods.md#readme
+[m]: /unspace/faux/doc/methods.md#readme
 [prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
 [raganwald]: http://github.com/raganwald
 [read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
@@ -572,5 +572,5 @@ More Reading
 [s]: http://github.com/quirkey/sammy "sammy_js"
 [todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
 [t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
-[v]: ./doc/more_about_views.md#readme
+[v]: /unspace/faux/doc/more_about_views.md#readme
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
