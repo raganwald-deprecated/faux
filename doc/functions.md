@@ -40,21 +40,33 @@ Finally, you can define a function that takes a callback. You must declare all t
       }
     }
     
-**recursion: see recursion**
+**great expectations**
 
-When Faux expects a function, there are three rules:
+When Faux expects a function to be used as a step or as `before_` or `after_` step advice, there are three rules:
 
-*Rule One*: If Faux expects a function and you supply a function, Faux takes the function.
+*Rule One*: If Faux expects a function to be used as a step or as `before_` or `after_` step advice, and you supply something that is a function, Faux accepts the function. So if you write:
 
-*Rule Two*: If Faux expects a function and you supply something that is not a function but it implements a method called `.toFunction()`, Faux calls `.toFunction()` and accepts the result.
+    before_display: function () {
+      window.console && console.log('some debugging information');
+    }
+    
+By Rule One, Faux accepts the function.
 
-Rule Two is easy to understand. For example, if you use `String.prototype.toFunction()` from [Functional Javascript][functional], every string implements to `.toFunction()` method. Therefore, you can do something like this:
+*Rule Two*: If Faux expects a function to be used as a step or as `before_` or `after_` step advice, and you supply something that is not a function but it implements a method called `.toFunction()`, Faux calls its `.toFunction()` method and accepts the result.
+
+Rule Two is easy to understand. For example, if you use `String.prototype.toFunction()` from [Functional Javascript][functional], every string implements to `.toFunction()` method. Therefore, if you write this:
 
     before_display: "window.console && console.log('some debugging information')"
+    
+It is equivalent to writing this:
 
-*Rule Three* is that if Faux expects a function and you supply a hash that is not a function and does not implement the `.toFunction()` method, Faux constructs a function that takes the parameters as an argument and returns a new hash. The new hash consists of each of the keys of your hash, but the values will be interpreted as functions.
+    before_display: "window.console && console.log('some debugging information')".toFunction()
 
-And example is worth a thousand words. This example using Rule Three—
+*Rule Three*: If Faux expects a function to be used as a step or as `before_` or `after_` step advice, and you supply a hash that is not a function and does not implement the `.toFunction()` method, Faux constructs a function that takes the parameters as an argument and returns a new hash.
+
+The new hash consists of each of the keys of your hash, but Faux expects a function for each value. Faux uses rules one and two on these value functions, but not Rule Three.
+
+An example is worth a thousand words. This example using Rule Three—
 
     before_display: {
       
@@ -82,7 +94,7 @@ And example is worth a thousand words. This example using Rule Three—
       };
     }
 
-Why bother? Well, if you don't use Functional Javascript or anything else like that, it may not be worth the trouble. However, consider this version using Functional Javascript and Rule Two:
+Why bother with Rule Three? Well, if you don't use `String.prototype.toFunction()` or anything else like that, it may not be worth the trouble. However, consider this version using `String.prototype.toFunction()` and Rule Two:
 
     before_display: {
         id:    ".castle.id",
