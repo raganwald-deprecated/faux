@@ -241,7 +241,84 @@ Now the view gets a `.render()` method that invokes the `spells.haml` template a
     magic_controller
       .display('spells');
 
+<<<<<<< HEAD:README.md
+**a little more about convention over configuration when declaring views**
+      
+We know it's a question of taste, but if you like convention over configuration, you can also write:
+
+    VestamentsView = Backbone.View.extend({ ... });
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour'
+      });
+      
+We're not big fans of global namespace clutter. If you feel the same way, start like this:
+
+    window.ca || (window.ca = {});
+    window.ca.unspace || (window.ca.unspace = {});
+
+    magic_controller = new Faux.Controller({ 
+      element_selector: '.base',
+      partial: 'hamljs',
+      partial_suffix: '.haml',
+      namespace: ca.unspace     // <--- lookie here
+    });
+    
+And now you can write:
+
+    ca.unspace.VestamentsView = Backbone.View.extend({ ... });
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour'
+      });
+
+If for whatever reason you write something like this:
+
+    VestamentsView = Backbone.View.extend({ ... });
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour'
+      });
+
+But you *don't* want to have `magic_controller.vestaments()` use `VestamentsView`, remember that you can do either of the following:
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour',
+        clazz: SomeOtherView
+      });
+
+Or:
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour',
+        clazz: false
+      });
+  
+You know what? Some folks are big fans of point-free syntax and anonymous functions. Faux digs your groove, too:
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour',
+        clazz: SomeViewClass.extend({ ... })
+      });
+      
+And even:
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour',
+        clazz: {
+          // equivalent to Backbone.View.extend({ ... })
+        }
+      });
+=======
 *You can read more about Faux and views in [More About Views][v].*
+>>>>>>> e8c73bcf44d0067a04cebc6ef90df1d437533fd3:README.md
       
 **playing well with others**
 
