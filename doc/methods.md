@@ -7,7 +7,7 @@ By default, there are five steps that are executed in order: `['get_params', 'fe
 
 **more about writing your own steps**
 
-As mentioned in the [readme][r], you can write your own function and slot it in the options like this:
+As mentioned in the [readme][readme], you can write your own function and slot it in the options like this:
 
     magic_controller
       .display('coven', {
@@ -72,4 +72,43 @@ Your function will return immediately and `do_something(data)` will get called w
     
 Now Faux will assume that you are managing the chain of steps and will pass the future of the method chain as the `callback` parameter.
 
-[r]: ../README.MD#readme
+**More Reading**
+
+* [Faux][readme]
+* [Writing an Application with Faux][w]
+* [More About Views][v]
+* [Methods][m]
+* [Configuration Options][c]
+* [Functions][f]
+
+*Faux and its documentation is still a work in progress: Future additions to this document may or may not include discussions about handling error codes, directly invoking methods, unobtrusive handlers, and some of the other macros such as `title`, `infers`, `redirects_to`, and `location`.*
+
+[aanand]: http://github.com/aanand/
+[api]: http://www.joelonsoftware.com/articles/APIWar.html "How Microsoft Lost the API War"
+[b]: http://documentcloud.github.com/backbone/
+[cloud]: http://getcloudkit.com/
+[core]: http://www.ridecore.ca "CORE BMX and Boards"
+[couch]: http://couchdb.apache.org/
+[cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
+[c]: /unspace/faux/tree/master/doc/config.md#readme
+[functional]: http://osteele.com/sources/javascript/functional/
+[f]: /unspace/faux/tree/master/doc/functions.md#readme
+[haml]: http://haml-lang.com/ "#haml"
+[jamie]: http://github.com/jamiebikies
+[k]: https://github.com/raganwald/JQuery-Combinators
+[mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
+[m]: /unspace/faux/tree/master/doc/methods.md#readme
+[prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
+[raganwald]: http://github.com/raganwald
+[read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
+[readme]: /unspace/faux/tree/master/docREADME.md#readme
+[sinatra]: http://www.sinatrarb.com/
+[spa]: http://en.wikipedia.org/wiki/Single_page_application "Single Page Application"
+[spi]: http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php "The Single Page Interface Manifesto"
+[sprout]: http://www.sproutcore.com/
+[s]: http://github.com/quirkey/sammy "sammy_js"
+[todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
+[t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
+[v]: /unspace/faux/tree/master/doc/more_about_views.md#readme
+[w]: /unspace/faux/tree/master/doc/writing.md#readme
+[wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
