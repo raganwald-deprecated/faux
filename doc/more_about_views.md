@@ -1,7 +1,5 @@
 More About Views
 ===
-
-**a little more about convention over configuration when declaring views**
       
 We know it's a question of taste, but if you like convention over configuration, you can also write:
 
@@ -86,7 +84,12 @@ Models in Backbone.js can also be managed with a [Model Class][mc] or [Collectio
     });
 
     CrystalBallView = Backbone.View.extend({
-      // elided
+      initialize: function () {
+        var view = this;
+        view.model.bind('change', function () {
+          view.render();
+        })
+      }
     });
 
     magic_controller
@@ -99,7 +102,7 @@ Models in Backbone.js can also be managed with a [Model Class][mc] or [Collectio
 
 Just as Faux is able to deduce the view class from the name of the controller method you declare, Faux is also able to deduce the name of a model class or collection class. The above declaration can just as easily be written:
 
-    // "CrystalBall" or "CrystalBallModel" declared previously
+    // "CrystalBall" or "CrystalBallModel" and "CrystalBallView" or "CrystalBallModelView" declared previously
 
     magic_controller
       .display('crystal_ball', {
@@ -132,16 +135,16 @@ Sometimes you don't want Faux creating a model class. No problem:
         // elided
         model_clazz: false
       });
- Or you want to pick your own model class:
+      
+Or you want to pick your own model class:
  
-
     magic_controller
       .display('familiars', {
         // elided
         model_clazz: SomeOtherModel
       });
 
-You're always in control.
+With Faux, you're always in control. There's no mystery, Faux is simply wiring things together that you create.
 
 **More Reading**
 
