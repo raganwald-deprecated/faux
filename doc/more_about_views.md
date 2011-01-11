@@ -63,6 +63,85 @@ Some folks are big fans of point-free syntax and anonymous functions. Faux digs 
           // equivalent to Backbone.View.extend({ ... })
         }
       });
+      
+**models**
+
+[Bacbone.js][b]'s views are great for managing interaction unobtrusively. Each view can have a model that serves as the source of the data displayed by its templates. The easiest way to initialize a view with data it to assign in to the `model` parameter:
+
+    StaffView = Backbone.View.extend({
+      // elided
+    });
+
+    magic_controller
+      .display('staff', {
+        gets: { model: '/staff/:id' }
+      });
+
+This places the raw data for a staff into the view's `model` property, where it can be rendered by the template or accessed by view methods.
+
+Models in Backbone.js can also be managed with a [Model Class][mc] or [Collection Class][cc]. This is useful when you want to do things like automatically re-render a view when some data is updated:
+
+    CrystalBall = Backbone.Model.extend({
+      // elided
+    });
+
+    CrystalBallView = Backbone.View.extend({
+      // elided
+    });
+
+    magic_controller
+      .display('crystal_ball', {
+        gets: '/ball/:id'
+        before_display: {
+          model: function (params) { return new CrystalBall(params.ball); }
+        }
+      });
+
+Just as Faux is able to deduce the view class from the name of the controller method you declare, Faux is also able to deduce the name of a model class or collection class. The above declaration can just as easily be written:
+
+    // "CrystalBall" or "CrystalBallModel" declared previously
+
+    magic_controller
+      .display('crystal_ball', {
+        gets: { model: '/ball/:id' }
+      });
+
+Faux creates a new instance of `CrystalBall` and assigns it to the instance of `CrystalBallView` automatically. Faux does the same thing with backbone.js's [Collection Classes][cc] when you declare a method that looks like a plural:
+
+    SpellCollection = Backbone.Collection.extend({
+      // elided
+    });
+
+    SpellsView = Backbone.View.extend({
+      // elided
+    });
+
+    magic_controller
+      .display('spells', {
+        gets: { model: '/spells' }
+      });
+
+Sometimes you don't want Faux creating a model class. No problem:
+
+    FamiliarModel = backbone.Model.extend({
+      // elided
+    });
+
+    magic_controller
+      .display('familiars', {
+        // elided
+        model_clazz: false
+      });
+ Or you want to pick your own model class:
+ 
+
+    magic_controller
+      .display('familiars', {
+        // elided
+        model_clazz: SomeOtherModel
+      });
+
+You're always in control.
 
 **More Reading**
 
@@ -83,6 +162,7 @@ Some folks are big fans of point-free syntax and anonymous functions. Faux digs 
 [couch]: http://couchdb.apache.org/
 [cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
 [c]: /unspace/faux/tree/master/doc/config.md#readme
+[cc]: http://documentcloud.github.com/backbone/#Collection
 [functional]: http://osteele.com/sources/javascript/functional/
 [f]: /unspace/faux/tree/master/doc/functions.md#readme
 [haml]: http://haml-lang.com/ "#haml"
@@ -90,6 +170,7 @@ Some folks are big fans of point-free syntax and anonymous functions. Faux digs 
 [k]: https://github.com/raganwald/JQuery-Combinators
 [mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
 [m]: /unspace/faux/tree/master/doc/methods.md#readme
+[mc]: http://documentcloud.github.com/backbone/#Model
 [prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
 [raganwald]: http://github.com/raganwald
 [read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"

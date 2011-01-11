@@ -179,9 +179,11 @@ Here's a simple example extracted from a recent project. This view's model is a 
 
 There are two events the view manages. When you click on an element with the CSS class `add_spell`, it shows the hidden form. When you click the form's submit button, it bundles all the form element's values into a hash. This becomes the attributes for a new spell added to the collection with the `.create(...)` method. When `.create(...)` successfully completes, you hide the form again.
 
+    var SpellCollection = Backbone.Collection.extend({
+      // .. not shown
+    });
+
     var SpellsView = Backbone.View.extend({
-      
-      model: SpellsCollection, // not shown
   
       // Backbone's DOM event handling. We declare an event by name, an optional 
       // jQuery selector, and a method to call.
@@ -226,7 +228,7 @@ All of this is plain vanilla Backbone.js. Faux's contribution is to make it easy
         gets: { model: '/spells' }
       });
 
-Now the view gets a `.render()` method that invokes the `spells.haml` template and when you invoke the `/spells` faux route, you see your spells. Note that it's also possible to wire up the `SpellsCollection` to fetch its own contents, in which case you could just write:
+Now the view gets a `.render()` method that invokes the `spells.haml` template and when you invoke the `/spells` faux route, the spells are fetched from the server, wrapped in a `SpellCollection`, and displayed in a template managed by a `SpellsView`. Note that it's also possible to wire up the `SpellCollection` to fetch its own contents, in which case you could just write:
 
     magic_controller
       .display('spells');
