@@ -109,7 +109,7 @@ Just as Faux is able to deduce the view class from the name of the controller me
         gets: { model: '/ball/:id' }
       });
 
-Faux creates a new instance of `CrystalBall` and assigns it to the instance of `CrystalBallView` automatically. Faux does the same thing with backbone.js's [Collection Classes][cc] when you declare a method that looks like a plural:
+Faux creates a new instance of `CrystalBall` and assigns it to the instance of `CrystalBallView` automatically. Faux does the same thing with Backbone.js's [Collection Classes][cc] when you declare a method that looks like a plural:
 
     SpellCollection = Backbone.Collection.extend({
       // elided
@@ -126,7 +126,7 @@ Faux creates a new instance of `CrystalBall` and assigns it to the instance of `
 
 Sometimes you don't want Faux creating a model class. No problem:
 
-    FamiliarModel = backbone.Model.extend({
+    FamiliarModel = Backbone.Model.extend({
       // elided
     });
 
