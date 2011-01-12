@@ -1,7 +1,17 @@
 More About Views
 ===
+
+The naiïve way to write a controller method in Faux looks like this:
+
+    VestamentsView = Backbone.View.extend({ ... });
+
+    magic_controller
+      .display('vestaments', {
+        route: '/vestaments/:colour',
+        clazz: VestamentsView
+      });
       
-We know it's a question of taste, but if you like convention over configuration, you can also write:
+If you like convention over configuration, you can also write:
 
     VestamentsView = Backbone.View.extend({ ... });
 
