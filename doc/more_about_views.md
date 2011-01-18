@@ -74,7 +74,7 @@ Some folks are big fans of point-free syntax and anonymous functions. Faux digs 
       
 **models**
 
-[Bacbone.js][b]'s views are great for managing interaction unobtrusively. Each view can have a model that serves as the source of the data displayed by its templates. The easiest way to initialize a view with data it to assign in to the `model` parameter:
+[Bacbone.js][b]'s views are great for managing interaction unobtrusively. Each view can have a model that serves as the source of the data displayed by its templates. The easiest way to initialize a view with data is to assign in to the `model` parameter:
 
     StaffView = Backbone.View.extend({
       // elided
@@ -134,7 +134,15 @@ Faux creates a new instance of `CrystalBall` and assigns it to the instance of `
         gets: { model: '/spells' }
       });
 
-Sometimes you don't want Faux creating a model class. No problem:
+Sometimes, you want to pick your own model class:
+ 
+    magic_controller
+      .display('familiars', {
+        // elided
+        model_clazz: SomeOtherModel
+      });
+
+And sometimes, you don't want to use a model class even if you've declared one with the proper name. No problem:
 
     FamiliarModel = Backbone.Model.extend({
       // elided
@@ -144,14 +152,6 @@ Sometimes you don't want Faux creating a model class. No problem:
       .display('familiars', {
         // elided
         model_clazz: false
-      });
-      
-Or you want to pick your own model class:
- 
-    magic_controller
-      .display('familiars', {
-        // elided
-        model_clazz: SomeOtherModel
       });
 
 With Faux, you're always in control. There's no mystery, Faux is simply wiring things together that you create.
