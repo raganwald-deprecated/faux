@@ -45,6 +45,8 @@ Faux is not a one-size-fits-all for writing SPI applications.
 
 *Faux and its documentation is still a work in progress: Future additions to this documentation may or may not include discussions about handling error codes, directly invoking methods, unobtrusive handlers, and some of the other macros such as `title`, `infers`, `redirects_to`, and `location`.*
 
+*Faux was created with the support of the [International Development Research Centre][idrc], a Canadian Crown Corporation created by the Parliament of Canada that supports research in developing countries to promote growth and development.*
+
 [aanand]: http://github.com/aanand/
 [api]: http://www.joelonsoftware.com/articles/APIWar.html "How Microsoft Lost the API War"
 [b]: http://documentcloud.github.com/backbone/
@@ -74,3 +76,4 @@ Faux is not a one-size-fits-all for writing SPI applications.
 [v]: /unspace/faux/tree/master/doc/more_about_views.md#readme
 [w]: /unspace/faux/tree/master/doc/writing.md#readme
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
+[idrc]: http://www.idrc.ca/
