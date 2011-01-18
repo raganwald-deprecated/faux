@@ -76,4 +76,4 @@ Faux is not a one-size-fits-all for writing SPI applications.
 [v]: /unspace/faux/tree/master/doc/more_about_views.md#readme
 [w]: /unspace/faux/tree/master/doc/writing.md#readme
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
-[idrc]: http://www.idrc.ca/
+[idrc]: http://publicwebsite.idrc.ca/
