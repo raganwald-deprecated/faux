@@ -10,7 +10,7 @@ By default, there are five steps that are executed in order: `['get_params', 'fe
 As mentioned in the [readme][readme], you can write your own function and slot it in the options like this:
 
     magic_controller
-      .display('coven', {
+      .method('coven', {
         gets: { models: '/witches' },
         transform: function (parameters) {
           return {

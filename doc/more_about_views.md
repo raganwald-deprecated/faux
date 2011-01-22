@@ -6,7 +6,7 @@ The naiïve way to write a controller method in Faux looks like this:
     VestamentsView = Backbone.View.extend({ ... });
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour',
         clazz: VestamentsView
       });
@@ -16,7 +16,7 @@ If you like convention over configuration, you can also write:
     VestamentsView = Backbone.View.extend({ ... });
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour'
       });
       
@@ -25,19 +25,19 @@ If you don't specify a `clazz` but Faux can find a view class that is named afte
     ThaumaturgyView = Backbone.View.extend({ ... });
 
     magic_controller
-      .display('thaumaturgy', { ... ); // infers clazz: ThaumaturgyView
+      .method('thaumaturgy', { ... ); // infers clazz: ThaumaturgyView
 
 There's another special case for method names that look like plurals:
 
     SpellCollectionView = Backbone.View.extend({ ... });
     
     magic_controller
-      .display('spells', { ... }); // infers clazz: SpellCollectionView if it can't find SpellsView first
+      .method('spells', { ... }); // infers clazz: SpellCollectionView if it can't find SpellsView first
       
 If you don't want a view class, you can always insist:
 
     magic_controller
-      .display('something', {
+      .method('something', {
         clazz: false
       });
 
@@ -58,14 +58,14 @@ And now you can write:
     ca.unspace.VestamentsView = Backbone.View.extend({ ... });
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour'
       });
   
 Some folks are big fans of point-free syntax and anonymous functions. Faux digs your groove, too:
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour',
         clazz: {
           // equivalent to Backbone.View.extend({ ... })
@@ -81,7 +81,7 @@ Some folks are big fans of point-free syntax and anonymous functions. Faux digs 
     });
 
     magic_controller
-      .display('staff', {
+      .method('staff', {
         gets: { model: '/staff/:id' }
       });
 
@@ -103,7 +103,7 @@ Models in Backbone.js can also be managed with a [Model Class][mc] or [Collectio
     });
 
     magic_controller
-      .display('crystal_ball', {
+      .method('crystal_ball', {
         gets: '/ball/:id'
         before_display: {
           model: function (params) { return new CrystalBall(params.ball); }
@@ -115,7 +115,7 @@ Just as Faux is able to deduce the view class from the name of the controller me
     // "CrystalBall" or "CrystalBallModel" and "CrystalBallView" or "CrystalBallModelView" declared previously
 
     magic_controller
-      .display('crystal_ball', {
+      .method('crystal_ball', {
         gets: { model: '/ball/:id' }
       });
 
@@ -130,14 +130,14 @@ Faux creates a new instance of `CrystalBall` and assigns it to the instance of `
     });
 
     magic_controller
-      .display('spells', {
+      .method('spells', {
         gets: { model: '/spells' }
       });
 
 Sometimes, you want to pick your own model class:
  
     magic_controller
-      .display('familiars', {
+      .method('familiars', {
         // elided
         model_clazz: SomeOtherModel
       });
@@ -149,7 +149,7 @@ And sometimes, you don't want to use a model class even if you've declared one w
     });
 
     magic_controller
-      .display('familiars', {
+      .method('familiars', {
         // elided
         model_clazz: false
       });

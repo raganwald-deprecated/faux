@@ -103,24 +103,24 @@ As we noted above, Faux provides a utility, not an abstraction. You can write an
 Let's see how it works. We'll define the simplest possible method:
 
     magic_controller
-      .display('home');
+      .method('home');
 
-The `.display` method creates a method in your controller, `magic_controller.home()`.By default, this method fetches a Haml template from `/hamljs/home.haml` and uses that to render the HTML that the user sees into the current page inside the element identified by the jQuery selector `.container`.
+The `.method` method creates a method in your controller, `magic_controller.home()`.By default, this method fetches a Haml template from `/hamljs/home.haml` and uses that to render the HTML that the user sees into the current page inside the element identified by the jQuery selector `.container`.
 
 Our favourite letter of the alphabet is [K][k], so you also can write things like:
 
     magic_controller
-      .display('spellbook')
-      .display('robe');
+      .method('spellbook')
+      .method('robe');
 
-Also by default, Faux creates a faux route in your application that is extracted from the name of the method. Thus, calling `.display('home')` will create a method `.home()` and also create a faux route of `/home`. This route is bound (using Backbone's controller architecture) to your method. 
+Also by default, Faux creates a faux route in your application that is extracted from the name of the method. Thus, calling `.method('home')` will create a method `.home()` and also create a faux route of `/home`. This route is bound (using Backbone's controller architecture) to your method. 
 
 Let's be clear what we mean by "faux route." A real route is something like `http://prestidigitation.unspace.ca/`. When we say there is a faux route of `/home`, we mean that the *anchor* of the real route will be `/home`. So the complete location in the user's browser would be `http://prestidigitation.unspace.ca/#/home`. The complete location is always real route + `#` + faux route.
 
 You can take control over the finer details by overriding Faux's defaults using a hash of options. Here is an example:
 
     magic_controller
-      .display('home', {
+      .method('home', {
         route: '/'
       });
 
@@ -131,7 +131,7 @@ Now the faux route `/` is bound to the `.home()` method instead of `/home`. And 
 The route option is interesting. You can add some simple parameter interpolation:
 
     magic_controller
-      .display('headgear', {
+      .method('headgear', {
         route: '/hat/:type'
       });
 
@@ -144,7 +144,7 @@ Parameters can be used in your Haml templates, of course, so you can add things 
 And you can probably deduce what the following does to the displayed page:
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour',
         title: function (params) { return "Splendid " + params.colour + " Robes!"; }
       });
@@ -158,7 +158,7 @@ The best way to do this in Faux is to start using some Backbone views. In Faux, 
     VestamentsView = Backbone.View.extend({ });
 
     magic_controller
-      .display('vestaments', {
+      .method('vestaments', {
         route: '/vestaments/:colour',
         clazz: VestamentsView
       });
@@ -224,14 +224,14 @@ There are two events the view manages. When you click on an element with the CSS
 All of this is plain vanilla Backbone.js. Faux's contribution is to make it easy to everything up with a few lines of code like this:
 
     magic_controller
-      .display('spells', {
+      .method('spells', {
         gets: { model: '/spells' }
       });
 
 Now the view gets a `.render()` method that invokes the `spells.haml` template and when you invoke the `/spells` faux route, the spells are fetched from the server, wrapped in a `SpellCollection`, and displayed in a template managed by a `SpellsView`. Note that it's also possible to wire up the `SpellCollection` to fetch its own contents, in which case you could just write:
 
     magic_controller
-      .display('spells');
+      .method('spells');
 
 *You can read more about Faux and views in [More About Views][v].*
       
@@ -242,7 +242,7 @@ The examples so far give a flavour for declaring views and populating them with 
 Let's start with the simplest case: performing a `GET`. Nothing could be easier:
 
     magic_controller
-      .display('spells', {
+      .method('spells', {
         gets: '/spells'
       });
       
@@ -267,7 +267,7 @@ Faux will blend that in with the parameters. Since there weren't any, the result
 You can get that directly within the template, or you can have it added to your `SpellsView` instance as `this.options`. That being said, you might not care for Faux's default choice of `server_data`. Here's how to change it:
     
     magic_controller
-      .display('spells', {
+      .method('spells', {
         gets: { models: '/spells' }
       });
 
@@ -283,10 +283,10 @@ And now the options passed to your `SpellsView` instance are:
 Configuring your parameter name(s) has interesting implications for integrating smoothly with Backbone's `Model` classes. before we discuss things in more detail, we should discuss parameterizing server requests. Let's say we write:
     
     magic_controller
-      .display('spells', {
+      .method('spells', {
         gets: { models: '/spells' }
       })
-      .display('spell', {
+      .method('spell', {
         route: '/spells/:id',
         gets: { model: '/spells/:id' }
       });
@@ -304,7 +304,7 @@ Now when we have a route of `/#/spells/42`, Faux issues `GET /spells/42` and the
 Note that the original parameter is preserved and will be passed along to your `SpellView` initialization. In this example the server's route has the same structure as the client's faux route, but that needn't be the case:
 
     magic_controller
-      .display('spell', {
+      .method('spell', {
         route: '/cast_:id',
         gets: { model: '/spells/search' }
       });
@@ -314,7 +314,7 @@ In this case, a route of `/#/cast_42` will result in a request to the server of 
 Pop quiz: What do you think will happen if you type the following?
 
     magic_controller
-      .display('spell', {
+      .method('spell', {
         route: '/spells/:id',
         gets: { model: '/spells/:id', history: '/spells/:id/history' }
       });
@@ -369,7 +369,7 @@ Faux writes a function for you for some of those steps. You can probably guess w
 We see you want a little more detail so here it is. You can write your own function and slot it in the options like this:
 
     magic_controller
-      .display('coven', {
+      .method('coven', {
         gets: { models: '/witches' },
         transform: function (parameters) {
           return {
@@ -411,7 +411,7 @@ You usually write a `transform` like this:
 Very simple. And for that matter, you don't even have to write a `tranform`. Faux also supports *step advice*. You can write `before_` and `after_` steps that are mixed into the steps that Faux writes for you. So you can also write:
 
     magic_controller
-      .display('coven', {
+      .method('coven', {
         gets: { models: '/witches' },
         before_display: function (parameters) {
           return {
@@ -434,27 +434,27 @@ Sometimes you want to make several different definitions share some commonality.
         route: 'headgear',
         partial: 'hats'
       })
-        .display('hats', {
+        .method('hats', {
           route: '',
           gets: { models: '/hats' },
           partial: 'plural'
         })
-        .display('hat', {
+        .method('hat', {
           route: ':id',
           gets: { models: '/hats/:id' },
           partial: 'singular'
         })
         .end();
 
-We establish a scope with `.begin(...)` and end it with `.end()`. In between, we call `.display(...)` twice, and each of those calls is inside our scope. Faux notes that your scope includes values for `route` and `partial`, and it acts as if you'd written:
+We establish a scope with `.begin(...)` and end it with `.end()`. In between, we call `.method(...)` twice, and each of those calls is inside our scope. Faux notes that your scope includes values for `route` and `partial`, and it acts as if you'd written:
 
     magic_controller
-      .display('hats', {
+      .method('hats', {
         route: '/headgear',
         gets: { models: '/hats' },
         partial: 'hats/plural'
       })
-      .display('hat', {
+      .method('hat', {
         route: 'headgear/:id',
         gets: { models: '/hats/:id' },
         partial: 'hats/singular'
@@ -479,17 +479,17 @@ Scopes also help you share code. You recall we said that Faux chains `before_` a
         },
         partial: 'hats'
       })
-        .display('hats', {
+        .method('hats', {
           route: '',
           gets: { model: '/hats' },
           partial: 'plural'
         })
-        .display('hat', {
+        .method('hat', {
           route: ':id',
           gets: { models: '/hats/:id' },
           partial: 'singular'
         })
-        // insert other calls to .display here
+        // insert other calls to .method here
         .end();
 
 This code automatically massages any `models` parameter into `model: { models: [...], length: n }` form for all of the methods defined in its scope. And because `after_` calls are chained, you can write:
@@ -509,7 +509,7 @@ This code automatically massages any `models` parameter into `model: { models: [
         },
         partial: 'hats'
       })
-        .display('hats', {
+        .method('hats', {
           route: '',
           gets: { model: '/hats' },
           after_display: function (params) {
@@ -517,12 +517,12 @@ This code automatically massages any `models` parameter into `model: { models: [
           },
           partial: 'plural'
         })
-        .display('hat', {
+        .method('hat', {
           route: ':id',
           gets: { models: '/hats/:id' },
           partial: 'singular'
         })
-        // insert other calls to .display here
+        // insert other calls to .method here
         .end();
 
 **More Reading**
