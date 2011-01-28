@@ -1,6 +1,9 @@
 Methods
 ===
 
+> WARNING: WHile the following documentation is technically correct, Faux now has a new feature, *calculations*, that replaces almost all of the need for writing method steps. Calculations will be documented [Real Soon Now][rsn]
+[rsn]: https://secure.wikimedia.org/wiktionary/en/wiki/RSN
+
 **steps**
 
 By default, there are five steps that are executed in order: `['get_params', 'fetch_data', 'transform', 'display', 'redirect']`.

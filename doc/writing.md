@@ -10,9 +10,7 @@ At this time, Faux in the client requires:
 * Backbone
 * Haml-Js
 
-For the purpose of our discussion, we will describe servinga  Faux application from a Rails server. However, this is not a hard requirement. You can serve Faux as static pages using any web server, serve Faux using Node.js, or just about any web serving strategy that makes sense for your environment.
-
-
+For the purpose of our discussion, we will describe serving a Faux application from a Rails server. However, this is not a hard requirement. You can serve Faux as static pages using any web server, serve Faux using Node.js, or just about any web serving strategy that makes sense for your environment.
 
 **setting up a faux application**
 
@@ -341,6 +339,9 @@ That's right, Faux will issue two AJAX request to the server. When both have ret
     }
 
 **methods step by step**
+
+> WARNING: WHile the following documentation is technically correct, Faux now has a new feature, *calculations*, that replaces almost all of the need for writing method steps. Calculations will be documented [Real Soon Now][rsn]
+[rsn]: https://secure.wikimedia.org/wiktionary/en/wiki/RSN
 
 If you're writing server and client together, you can make one suit the other. But you may need to munge things a bit to make everything work. Alas, this is our lot as programmers. We dream at night of building towers of pure logic, but we spend our days mating copper wire with knob-and-tube wiring or re-routing plumbing around a building's extension.
 
