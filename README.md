@@ -5,7 +5,7 @@ Faux is a Javascript utility for building [Single Page Interface][spi] (or "SPI"
 
 *Single Page Interface applications are much more responsive than traditional server-side client applications*. Traditional applications fetch a complete page from the server as part of every interaction. The HTTP model and the architecture of browsers imposes a large overhead on every page displayed. SPI applications load one page and thereafter all changes to the page are handled in the browser using Javascript to manipulate the DOM. Interactions with the server are handled in the background using AJAX. The result is a much faster user experience that features a finer-grained, richer model of interaction.
 
-Faux helps you write SPI applications by providing a traditional page-centric application model, but implementing that model in the browser instead of the server. Faux applications have "pages" that are constructed using Haml templates from models. Faux applications have "routes" that can be bookmarked.
+Faux helps you write SPI applications by providing a traditional page-centric application model, but implementing that model in the browser instead of the server. Faux applications have "pages" that are constructed using [Haml templates][haml] from models. Faux applications have "routes" that can be bookmarked.
 
 Faux applications are familiar to anyone comfortable writing server applications using frameworks like Rails, and Faux may be the very best way to refactor a traditional server application by separating the business logic in a RESTful server from the application logic in the browser.
 
@@ -15,7 +15,17 @@ Instead, Faux provides you with a very simple DSL for defining controller method
 
 Dive into Faux!
 
-**More Reading**
+**an example application**
+
+<a target="_blank" href="http://min.us/mvkEt6y#1"><img src="http://i.min.us/jeaApo.png" border="0"/></a>
+
+[Misadventure][play] is a little game in the style of [Adventure][a]. Misadventure is written in Javascript and runs entirely in the browser. Misadventure is written in standard Model-View-Controller style, making heavy use of the [Faux][f] and [Backbone.js][b] libraries. A three part code review has been written:
+
+1. [Part I][pi]
+2. [Part II][pii]
+3. [Part III][piii]
+
+**more reading**
 
 * [Writing an Application with Faux][w]
 * [More About Views][v]
@@ -78,3 +88,11 @@ Faux is not a one-size-fits-all for writing SPI applications.
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
 [idrc]: http://publicwebsite.idrc.ca/
 [tti]: http://publicwebsite.idrc.ca/EN/Programs/Social_and_Economic_Policy/Think_Tank_Initiative/Pages/default.aspx
+[a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
+[f]: https://github.com/unspace/faux
+[play]: http://unspace.github.com/misadventure/
+[source]: http://github.com/unspace/misadventure
+[b]: http://documentcloud.github.com/backbone/
+[pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
+[pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
+[piii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_iii.md#readme

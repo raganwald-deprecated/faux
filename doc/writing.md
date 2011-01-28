@@ -10,9 +10,7 @@ At this time, Faux in the client requires:
 * Backbone
 * Haml-Js
 
-For the purpose of our discussion, we will describe servinga  Faux application from a Rails server. However, this is not a hard requirement. You can serve Faux as static pages using any web server, serve Faux using Node.js, or just about any web serving strategy that makes sense for your environment.
-
-
+For the purpose of our discussion, we will describe serving a Faux application from a Rails server. However, this is not a hard requirement. You can serve Faux as static pages using any web server, serve Faux using Node.js, or just about any web serving strategy that makes sense for your environment.
 
 **setting up a faux application**
 
