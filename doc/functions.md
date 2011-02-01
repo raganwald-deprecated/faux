@@ -107,7 +107,6 @@ Why bother with Rule Three? Well, if you don't use `String.prototype.toFunction(
 * [Faux][readme]
 * [Writing an Application with Faux][w]
 * [More About Views][v]
-* [Methods][m]
 * [Configuration Options][c]
 * [Functions][f]
 

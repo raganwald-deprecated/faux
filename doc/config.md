@@ -81,7 +81,6 @@ This sets up an route `/invisibility` that redirects to `/spell/invisibility`.
 * [Faux][readme]
 * [Writing an Application with Faux][w]
 * [More About Views][v]
-* [Methods][m]
 * [Configuration Options][c]
 * [Functions][f]
 

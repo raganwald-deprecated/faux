@@ -161,7 +161,6 @@ With Faux, you're always in control. There's no mystery, Faux is simply wiring t
 * [Faux][readme]
 * [Writing an Application with Faux][w]
 * [More About Views][v]
-* [Methods][m]
 * [Configuration Options][c]
 * [Functions][f]
 

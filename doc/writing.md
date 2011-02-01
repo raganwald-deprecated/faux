@@ -248,7 +248,7 @@ Let's start with the simplest case: performing a `GET`. Nothing could be easier:
       
 Given a `gets` option (or `get`, if you prefer that), Faux builds a `.spells(...)` method that uses AJAX to performs  `GET` back to the server, passing it the route's parameters (if any). It expects the results in `JSON` format.
 
-You shouldn't have any trouble figuring out what happens if you type `posts: '/foo'`, `puts: '/bar'`, or `deletes: '/bash'`, but let's stick with `gets` for now: By default, the result from the server is mixed in with your parameters was a parameter called `server_data`. So given a route of `/#/spells`, Faux will issue `GET /spells` to the server. Hand-waving over error handling for now, let's say the server responds with a JSON of:
+You shouldn't have any trouble figuring out what happens if you type `posts: '/foo'`, `puts: '/bar'`, or `deletes: '/bash'`, but let's stick with `gets` for now: By default, the result from the server is mixed in with your parameters. the key or name of the parameter will be the same as the name of your method. So given a route of `/#/spells`, Faux will issue `GET /spells` to the server. Hand-waving over error handling and exactly when that happens for now, let's say the server responds with a JSON of:
 
     [
       { id: 1, name: 'invisibility' },
@@ -258,13 +258,13 @@ You shouldn't have any trouble figuring out what happens if you type `posts: '/f
 Faux will blend that in with the parameters. Since there weren't any, the result is now:
 
     {
-      server_data: [
+      spells: [
         { id: 1, name: 'invisibility' },
         { id: 2, name: 'teleportation' }
       ]
     }
     
-You can get that directly within the template, or you can have it added to your `SpellsView` instance as `this.options`. That being said, you might not care for Faux's default choice of `server_data`. Here's how to change it:
+You can get that directly within the template, or you can have it added to your `SpellsView` instance as `this.options`. That being said, you might not care for Faux's default choice of `spells`. Here's how to change it:
     
     magic_controller
       .method('spells', {
@@ -339,94 +339,6 @@ That's right, Faux will issue two AJAX request to the server. When both have ret
         // ...
       ]
     }
-
-**methods step by step**
-
-> WARNING: While the following documentation is technically correct, Faux now has a new feature, *calculations*, that replaces almost all of the need for writing method steps. Calculations will be documented [Real Soon Now][rsn]
-[rsn]: https://secure.wikimedia.org/wiktionary/en/wiki/RSN
-
-If you're writing server and client together, you can make one suit the other. But you may need to munge things a bit to make everything work. Alas, this is our lot as programmers. We dream at night of building towers of pure logic, but we spend our days mating copper wire with knob-and-tube wiring or re-routing plumbing around a building's extension.
-
-Faux can't read your architect's mind, but it does provide a few tools for modifying the methods it creates. When Faux builds a method like `magic_controller.spells()`, it does so by composing a series of functions together into a pipeline. The initial parameters go in one end, and each function along the way can augment or even entirely change the parameters as it goes along.
-
-Radically simplified, Faux writes something like this:
-
-    function spell (params) {
-      spell_redirect(
-        spell_display(
-          spell_transform(
-            spell_fetch_data(
-              spell_get_params(
-                params
-              )
-            )
-          )
-        )
-      );
-    }
-
-I said it was radically simplified. Let's work at a higher level of abstraction. By default, there are five steps that are executed in order: `['get_params', 'fetch_data', 'transform', 'display', 'redirect']`.
-
-Faux writes a function for you for some of those steps. You can probably guess which ones for the examples given so far: When you write a `gets` option, Faux writes a `fetch_data` function for you. Unless you override Faux's partial handling by writing `partial: false` and don't declare a view, Faux writes a `display` function for you. Faux uses the `get_params` step for something we haven't explained yet called an *unobtrusive handler*, and uses the `redirect` step for something rare, an *action*. The `transform` step is always left undefined by Faux so that you can do whatever you want with it.
-
-We see you want a little more detail so here it is. You can write your own function and slot it in the options like this:
-
-    magic_controller
-      .method('coven', {
-        gets: { models: '/witches' },
-        transform: function (parameters) {
-          return {
-            model: {
-              models: parameters.models,
-              length: parameters.models.length
-            }
-          };
-        }
-      });
-
-In this case, we're transforming parameters of:
-
-    {
-      models: [ ... ]
-    }
-
-Into:
-
-    {
-      model: {
-        models: [ ... ],
-        length: 3
-      }
-    }
-
-*You can read more about writing your own steps in [Methods][m].*
-
-**free advice**
-
-You usually write a `transform` like this:
-
-    transform: function (params) {
-      jQuery.extend(params, {
-        // some more stuff
-      });
-    }
-    
-Very simple. And for that matter, you don't even have to write a `tranform`. Faux also supports *step advice*. You can write `before_` and `after_` steps that are mixed into the steps that Faux writes for you. So you can also write:
-
-    magic_controller
-      .method('coven', {
-        gets: { models: '/witches' },
-        before_display: function (parameters) {
-          return {
-            model: {
-              models: parameters.models,
-              length: parameters.models.length
-            }
-          };
-        }
-      });
-      
-The two techniques may seem indistinguishable, however the difference will become abundantly clear in the next section when we discuss sharing definitions with *scopes*. For now, file away the following cryptic rule: When you declare more than one `before_` or `after_` step, they are chained together just as the steps are chained together.
 
 **scopes: re-using definitions**
 
@@ -533,7 +445,6 @@ This code automatically massages any `models` parameter into `model: { models: [
 * [Faux][readme]
 * [Writing an Application with Faux][w]
 * [More About Views][v]
-* [Methods][m]
 * [Configuration Options][c]
 * [Functions][f]
 

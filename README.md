@@ -29,7 +29,6 @@ Dive into Faux!
 
 * [Writing an Application with Faux][w]
 * [More About Views][v]
-* [Methods][m]
 * [Configuration Options][c]
 * [Functions][f]
 
