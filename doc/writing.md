@@ -161,7 +161,9 @@ The best way to do this in Faux is to start using some Backbone views. In Faux, 
         clazz: VestamentsView
       });
       
-Now when the route `/#/vestaments/blue` is invoked, the `.vestaments()` method will create a new instance of `VestamentsView` and pass its initialization method `{ colour: 'blue' }` as a parameter. You can write your own `.intitialize()` method to do whatever you like with that, of course. To quote the Backbone documentation:
+Now when the route `/#/vestaments/blue` is invoked, the `.vestaments()` method will create a new instance of `VestamentsView` and pass its initialization method `{ colour: 'blue' }` as a parameter. You can write your own `.intitialize()` method to do whatever you like with that, of course.
+
+To quote the Backbone documentation:
 
 > When creating a new View, the options you pass are attached to the view as `this.options`, for future reference. There are several special options that, if passed, will be attached directly to the view: `model`, `collection`, `el`, `id`, `className`, and `tagName`. If the view defines an **initialize** function, it will be called when the view is first created. If you'd like to create a view that references an element *already* in the DOM, pass in the element as an option: `new View({el: existingElement})`
 
@@ -340,7 +342,7 @@ That's right, Faux will issue two AJAX request to the server. When both have ret
 
 **methods step by step**
 
-> WARNING: WHile the following documentation is technically correct, Faux now has a new feature, *calculations*, that replaces almost all of the need for writing method steps. Calculations will be documented [Real Soon Now][rsn]
+> WARNING: While the following documentation is technically correct, Faux now has a new feature, *calculations*, that replaces almost all of the need for writing method steps. Calculations will be documented [Real Soon Now][rsn]
 [rsn]: https://secure.wikimedia.org/wiktionary/en/wiki/RSN
 
 If you're writing server and client together, you can make one suit the other. But you may need to munge things a bit to make everything work. Alas, this is our lot as programmers. We dream at night of building towers of pure logic, but we spend our days mating copper wire with knob-and-tube wiring or re-routing plumbing around a building's extension.
