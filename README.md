@@ -31,25 +31,9 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 
 [Misadventure][play] is a little game in the style of [Adventure][a]. Misadventure is written in Javascript and runs entirely in the browser. Misadventure is written in standard Model-View-Controller style, making heavy use of the [Faux][f] and [Backbone.js][b] libraries. A three part code review has been written:
 
-1. [Part I][pi]
-2. [Part II][pii]
-3. [Part III][piii]
-
-**why we created faux**
-
-We were building an application that mapped neatly onto a traditional CRUD server-side interface, however it was important for us to segregate the domain logic into a domain entity server and the UI into a separate application-specific code base. While in theory this is easy to do in a single Rails application, our experience is that in practice, domain and application logic blur. So we looked at building two Rails applications, a RESTful domain logic server and an application server using ActiveResource as model proxies.
-
-Once we realized how much Javascript we'd be adding to support application logic in the client, the idea of having what amounts to three separate code bases became unpalatable, so we embarked on building all of the application logic into the client and keeping the domain server lean, mean, clean, and RESTful.
-
-Thus, Faux is optimized to act as a font end for a RESTful domain logic server.
-
-**other approaches**
-
-Faux is not a one-size-fits-all for writing SPI applications.
-
-* Some applications are extremely simple and don't need the support for events and interaction that views provide. A framework like [Sammy][s] might be a good choice.
-* Some applications are small but need some support for interaction. Using Backbone.js directly might be the best choice, as this [example][todo] shows.
-* Many client-side applications ought to feature rich and varied interaction that doesn't revolve around routes. You might want to roll your own code on top of [Backbone.js][b] or jump right into a more sophisticated tool like [Sproutcore][sprout].
+1. Misadventure, Part I: [Overview][pi]
+2. Misadventure, Part II: [controller.wake()][pii]
+3. Misadventure, Part III: [Models and Views][piii]
 
 **note**
 
