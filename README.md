@@ -25,7 +25,7 @@ Faux can wire up a `CustomerCollection` of `Customer` models, connect the collec
 Misadventure
 ---
 
-Interested in getting a feel for how Faux works? Have a look at our first example application, ****Misadvanture**:
+Interested in getting a feel for how Faux works? Have a look at our first example application, **Misadvanture**:
 
 <a target="_blank" href="http://min.us/mvkEt6y#1"><img src="http://i.min.us/jeaApo.png" border="0"/></a>
 
