@@ -1,21 +1,31 @@
 Faux
 ===
 
-Faux is a Javascript utility for building [Single Page Interface][spi] (or "SPI") applications.
+Faux is a Javascript library for building [Single Page Interface][spi] (or "SPI") applications with [Backbone.js][b]'s Model, View, and Controller classes.
+
+**what's a single page application?**
 
 *Single Page Interface applications are much more responsive than traditional server-side client applications*. Traditional applications fetch a complete page from the server as part of every interaction. The HTTP model and the architecture of browsers imposes a large overhead on every page displayed. SPI applications load one page and thereafter all changes to the page are handled in the browser using Javascript to manipulate the DOM. Interactions with the server are handled in the background using AJAX. The result is a much faster user experience that features a finer-grained, richer model of interaction.
 
-Faux helps you write SPI applications by providing a traditional page-centric application model, but implementing that model in the browser instead of the server. Faux applications have "pages" that are constructed using [Haml templates][haml] from models. Faux applications have "routes" that can be bookmarked.
+**what is backbone?**
 
-Faux applications are familiar to anyone comfortable writing server applications using frameworks like Rails, and Faux may be the very best way to refactor a traditional server application by separating the business logic in a RESTful server from the application logic in the browser.
+> Backbone supplies structure to JavaScript-heavy applications by providing models with key-value binding and custom events, collections with a rich API of enumerable functions, views with declarative event handling, and connects it all to your existing application over a RESTful JSON interface.--[http://documentcloud.github.com/backbone/](http://documentcloud.github.com/backbone/)
 
-Faux may also be the easiest way to transition from writing server applications to SPI applications. Faux applications are built out of [Backbone.js][b]'s models, views, and controllers. But Faux isn't a framework: Faux doesn't ask you to learn a new, [non-portable][wicmajsp] abstraction in lieu of using [MVC][mvp].
+**what is faux?**
 
-Instead, Faux provides you with a very simple DSL for defining controller methods, the routes that invoke them, and the templates that should be displayed. From there you gradually add functionality as you need it: You can write View classes for handling interaction, model classes for automatically managing state in the browser, or collection classes for managing filtering and reporting of data sets. You can break pages into components and use all of Faux and backbone.js's tools—like templates, views, and models—to render and control each component. You can add finer- and finer-grained interactivity directly to the View and Model classes you write.
+Faux is a library that provides *structure* for a backbone application. Backbone provides terrific support for building Model-View-Controller and Proxy-View-Controller applications in Javascript, but Backbone is deliberately agnostic about how to organize your application at an architectural level and how your application should work at a more detailed level.
 
-Dive into Faux!
+Faux provides the missing architectural structure: Faux gives you a place to put your templates, a place to put your Javascript, a convention for naming your classes and controller methods, and answers many more questions about how to build an application wit Backbone. And in addition to providing structure for your application, Faux takes advantage of the structure to write a lot of your code for you. That's why if you write:
 
-**an example application**
+    controller
+      .method('customers');
+
+Faux can wire up a `CustomerCollection` of `Customer` models, connect the collection to a `CustomerCollectionView`, render it through the `customer.haml` template, and connect it to the `#/customers` route. Faux gives you a place to start coding if you're new to Backbone, and a standard set of conventions if you're experienced.
+
+Misadventure
+---
+
+Interested in getting a feel for how Faux works? Have a look at our first example application, ****Misadvanture**:
 
 <a target="_blank" href="http://min.us/mvkEt6y#1"><img src="http://i.min.us/jeaApo.png" border="0"/></a>
 
@@ -24,13 +34,6 @@ Dive into Faux!
 1. [Part I][pi]
 2. [Part II][pii]
 3. [Part III][piii]
-
-**more reading**
-
-* [Writing an Application with Faux][w]
-* [More About Views][v]
-* [Configuration Options][c]
-* [Functions][f]
 
 **why we created faux**
 
