@@ -34,7 +34,7 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 1. Misadventure, Part I: [Overview][pi]
 2. Misadventure, Part II: [controller.wake()][pii]
 3. Misadventure, Part III: [Models and Views][piii]
-3. Misadventure, Part IV: [Class Loading][pic]
+3. Misadventure, Part IV: [Class Loading][piv]
 
 **note**
 
