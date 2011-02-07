@@ -29,11 +29,12 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 
 <a target="_blank" href="http://min.us/mvkEt6y#1"><img src="http://i.min.us/jeaApo.png" border="0"/></a>
 
-[Misadventure][play] is a little game in the style of [Adventure][a]. Misadventure is written in Javascript and runs entirely in the browser. Misadventure is written in standard Model-View-Controller style, making heavy use of the [Faux][f] and [Backbone.js][b] libraries. A three part code review has been written:
+[Misadventure][play] is a little game in the style of [Adventure][a]. Misadventure is written in Javascript and runs entirely in the browser. Misadventure is written in standard Model-View-Controller style, making heavy use of the [Faux][f] and [Backbone.js][b] libraries. Here's a four-part code review:
 
 1. Misadventure, Part I: [Overview][pi]
 2. Misadventure, Part II: [controller.wake()][pii]
 3. Misadventure, Part III: [Models and Views][piii]
+3. Misadventure, Part IV: [Class Loading][pic]
 
 **note**
 
@@ -82,3 +83,4 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
 [piii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_iii.md#readme
+[piv]: http://github.com/raganwald/homoiconic/tree/master/2011/02/misadventure_part_iv.md#readme
