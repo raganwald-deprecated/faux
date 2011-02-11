@@ -36,6 +36,13 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 3. Misadventure, Part III: [Models and Views][piii]
 3. Misadventure, Part IV: [Class Loading][piv]
 
+Challenge Accepted
+---
+
+[Lift][l] is a framework that bills itself as "The most powerful, most secure web framework available today." It boasts of [Seven Things][st] that distinguish Lift from other web frameworks.
+
+Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][parallel_lift]. Here's [an example application][np] that demonstrates how Faux provides both of those features. Another of those features is [Wiring][wiring] that manages dependencies between models and views. And here's [another example application][kt] that shows how Faux uses Backbone.js to do the exact same thing.
+
 **note**
 
 *Faux was conceived on August 19, 2010 as "Roweis." A remark by Jeremy Ashkenas that we were creating a "Faux Server API" led to its new name.*
@@ -84,3 +91,10 @@ Interested in getting a feel for how Faux works? Have a look at our first exampl
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
 [piii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_iii.md#readme
 [piv]: http://github.com/raganwald/homoiconic/tree/master/2011/02/misadventure_part_iv.md#readme
+[l]: http://www.liftweb.net/
+[st]: http://seventhings.liftweb.net/
+[lazy_lift]: http://seventhings.liftweb.net/lazy "Lift has built-in Lazy Loading"
+[parallel_lift]: http://seventhings.liftweb.net/parallel "Lift can parallelize page rendering"
+[kt]: http://raganwald.github.com/knob_and_tube
+[np]: http://raganwald.github.com/nonpareil
+[wiring]: http://seventhings.liftweb.net/wiring
