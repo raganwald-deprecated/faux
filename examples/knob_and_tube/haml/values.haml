@@ -1,0 +1,15 @@
+%table
+  %thead
+    %th n
+    %th matrix
+    %th naive
+  %tbody
+    :each value in this.model.models
+      %tr
+        %td{ class: 'value value_id_' + value.id }
+        %td{ class: 'matrix value_id_' + value.id }
+          %img{ src: './images/ajax-loader.gif' }
+        %td{ class: 'naive value_id_' + value.id }
+          %img{ src: './images/ajax-loader.gif' }
+
+%i Click on a number in the first column, you'll see it "swap" with another random row.

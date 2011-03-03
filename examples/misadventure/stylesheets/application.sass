@@ -1,0 +1,124 @@
+// sass --watch stylesheets/application.sass:stylesheets/application.css
+
+*
+  :font-size                  100%
+  :margin                     0
+  :padding                    0
+
+body
+  :-webkit-text-stroke        1px transparent
+  :color                      darken(white, 80%)
+  :font
+    :family                   "palatino linotype", palatino, palladio, "urw palladio l", "book antiqua", "liberation serif", times, serif
+    :size                     12px
+  :text-rendering             optimizeLegibility
+
+small, img
+  :display                    block
+
+img
+  :margin                     14px auto
+
+a
+  :border-bottom              1px solid
+  :text-decoration            none
+  :outline                    0
+  :padding                    0 0 1px
+  &:link
+    :color                    green
+  &:visited, &:active
+    :color                    red
+  &:hover, &:active
+    :border-bottom            0
+
+p, li
+  :line-height                1.5
+
+p
+  :font-size                  14px
+  :margin                     0 0 14px
+
+ol
+  :border-top                 1px solid darken(#caaa84, 5%)
+  :padding                    15px 0 0
+
+li
+  :margin                     0 0 10px 25px
+
+table, h1
+  :position                   absolute
+
+table
+  :background                 #e3cfae
+  :border
+    :collapse                 collapse
+    :spacing                  0
+  :left                       32px
+  :top                        95px
+
+tr:first-child td
+  :border-top                 2px solid darken(#caaa84, 25%)
+tr:last-child td
+  :border-bottom              2px solid darken(#caaa84, 25%)
+   
+td
+  :border                     1px solid darken(#caaa84, 5%)
+  &:first-child
+    :border-left              2px solid darken(#caaa84, 25%)
+  &:last-child
+    :border-right             2px solid darken(#caaa84, 25%)
+  &.passage_north
+    :border-top               0
+  &.passage_south
+    :border-bottom            0
+  &.passage_west
+    :border-left              0
+  &.passage_east
+    :border-right             0
+  &.visited
+    :background               rgba(255,255,255,0.15)
+
+h1
+  :background                 url('../images/cover.png') 0 0 no-repeat
+  :height                     500px
+  :left                       7px
+  :overflow                   hidden
+  :text-indent               -999em
+  :top                        15px
+  :white-space                nowrap
+  :width                      330px
+
+#container
+  :background                 url('../images/background.jpg') 0 0 no-repeat
+  :height                     500px
+  :margin                     40px auto 10px
+  :left                      -147px
+  :position                   relative
+  :width                      668px
+
+.content
+  :height                     432px
+  :margin                     0 0 0 363px
+  :padding                    35px 0 0
+  :width                      262px
+
+.intro, .caption, #get-code
+  :text-align                 center
+
+.intro, #get-code
+  :font
+    :variant                  small-caps
+    :weight                   bold
+
+.intro
+  :font-size                  26px
+  :line-height                1
+  :margin 0 0                 30px
+
+.caption
+  :font-style                 italic
+  :letter-spacing             0.015em
+
+#get-code
+  :color                      darken(white, 75%)
+  :margin                     0 0 40px

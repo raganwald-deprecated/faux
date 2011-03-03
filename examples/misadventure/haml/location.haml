@@ -1,0 +1,56 @@
+%img{ src: this.passage_image_source() }
+
+%p.caption 
+  %em You are in #{this.text_description()}
+
+%ol{ id: this.model.id }
+  :if this.options.location.escapes_north()
+    %li
+      %a.north{ href: route_to_bed({ location: this.options.location }) } 
+        %strong &uarr; freedom beckons north
+  :if this.options.location.has_north()
+    %li
+      %a.north{ href: route_to_location({ location: this.options.location.north() }) } &uarr; move north
+
+  :if this.options.location.escapes_south()
+    %li
+      %a.south{ href: route_to_bed({ location: this.options.location }) } 
+        %strong &darr; freedom beckons south  &darr;
+  :if this.options.location.has_south()
+    %li
+      %a.north{ href: route_to_location({ location: this.options.location.south() }) } turn south &darr;
+
+  :if this.options.location.escapes_west()
+    %li
+      %a.west{ href: route_to_bed({ location: this.options.location }) } 
+        %strong &larr; freedom beckons to the west
+  :if this.options.location.has_west()
+    %li
+      %a.north{ href: route_to_location({ location: this.options.location.west() }) } &larr; go west
+
+  :if this.options.location.escapes_east()
+    %li
+      %a.east{ href: route_to_bed({ location: this.options.location }) } 
+        %strong freedom beckons to the east &rarr;
+  :if this.options.location.has_east()
+    %li
+      %a.north{ href: route_to_location({ location: this.options.location.east() }) } go east &rarr; 
+
+  %li
+    Or you can 
+    %a.close_eyes{ href: route_to_wake() } close your eyes
+     and go back to sleep, maybe it will all go away.
+
+<!-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+To the extent possible under law, Unspace Interactive has waived all copyright 
+and related or neighboring rights to the software, except for those portions
+that are otherwise licensed.
+
+This work is published from Canada. -->

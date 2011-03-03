@@ -1,0 +1,13 @@
+%table
+  %thead
+    %th n
+    %th matrix
+    %th naive
+  %tbody
+    :each n in _.range(1, 26)
+      %tr
+        %td= n
+        %td{ class: 'matrix n_' + n }
+          %img{ src: './images/ajax-loader.gif' }
+        %td{ class: 'naive n_' + n }
+          %img{ src: './images/ajax-loader.gif' }

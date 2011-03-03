@@ -1,0 +1,100 @@
+<!DOCTYPE html>  <html> <head>   <title>controller.js</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="bed_view.html">                 bed_view.js               </a>                                           <a class="source" href="controller.html">                 controller.js               </a>                                           <a class="source" href="location.html">                 location.js               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               controller.js             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-1">#</a>               </div>               <p>From Backbone.js's <code>Backbone.Controller</code> <a href="http://documentcloud.github.com/backbone/#Controller">documentation</a>:</p>
+
+<blockquote>
+  <p>Web applications often choose to change their URL fragment (<code>#fragment</code>) in order to provide shareable, bookmarkable URLs for an Ajax-heavy application.</p>
+  
+  <p><code>Backbone.Controller</code> provides methods for routing client-side URL fragments, and connecting them to actions and events.</p>
+</blockquote>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-2">#</a>               </div>               <p>Start a new Javascript scope.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="p">;(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-3">#</a>               </div>               <h2>Creating a new controller</h2>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-4">#</a>               </div>               <p>A <code>Faux.Controller</code> instance is a <code>Backbone.Controller</code>, with additional methods added for defining routes
+by convention and providing <code>route_to</code> helpers for temnplates.</p>
+
+<p>Controller methods can be invoked in two ways. First, with a route. For example,
+<code>#/wake</code> invokes <code>controller.wake()</code>, just like directly calling <code>controller.wake()</code>.
+Declaring <code>location: true</code> when configuring the controller declares that when we
+directly call controller methods, we want the controller to save the current location, i.e. to
+set the fragment to <code>#/wake</code> when we directly invoke <code>controller.wake()</code>.</p>
+
+<p>(It's an unfortunate coïncidence that the controller option <code>save_location</code> looks an awful lot like
+it has something to do with this application's location routes and method, but that's all
+it is, a coïncidence.)</p>
+
+<p>By default, we want to use <a href="http://documentcloud.github.com/backbone/#Model">Backbone.Model</a> classes
+for everything passed to views. Since we're passing <code>true</code>, we want Faux to infer the name of
+each model from the name of the controller method, i.e. The model for <code>controller.location</code> will
+be <code>location</code>.</p>
+
+<p>Place content in the <code>div</code> with a class of <code>content</code></p>
+
+<p>Haml partials are found in the <code>haml</code> directory, and the default suffix for haml files is <code>.haml</code></p>
+
+<p>Javascript files containing models, collections, and views can be found in the <code>javascripts</code> path.</p>
+
+<p>The default window title shall be <code>Misadventure</code></p>             </td>             <td class="code">               <div class="highlight"><pre><span class="kd">var</span> <span class="nx">controller</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Faux</span><span class="p">.</span><span class="nx">Controller</span><span class="p">({</span>
+  <span class="nx">save_location</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nx">element_selector</span><span class="o">:</span> <span class="s1">&#39;.content&#39;</span><span class="p">,</span>
+  <span class="nx">partial</span><span class="o">:</span> <span class="s1">&#39;haml&#39;</span><span class="p">,</span>
+  <span class="nx">partial_suffix</span><span class="o">:</span> <span class="s1">&#39;.haml&#39;</span><span class="p">,</span>
+  <span class="nx">javascript</span><span class="o">:</span> <span class="s1">&#39;javascripts&#39;</span><span class="p">,</span>
+  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Misadventure&#39;</span>
+<span class="p">});</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-5">#</a>               </div>               <h2>Defining controller methods</h2>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-6">#</a>               </div>               <p>We're going to define three controller methods, <code>controller.wake()</code>, <code>controller.location({...})</code>,
+and <code>controller.bed({...})</code></p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">controller</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-7">#</a>               </div>               <p><code>.begin</code> establishes a new scope. All three method will share a common set of "translations."
+These translations tell Faux how to turn a collection of <code>locations</code> into a <code>seed</code>, and how to 
+turn a <code>seed</code> into a collection of <code>locations</code>.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="p">.</span><span class="nx">begin</span><span class="p">({</span>
+    <span class="s1">&#39;seed=&#39;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">locations</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">locations</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">locations</span><span class="p">.</span><span class="nx">seed</span><span class="p">;</span> <span class="p">},</span>
+      <span class="s1">&#39;&#39;</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">substring</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;locations=&#39;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">seed</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">seed</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">LocationCollection</span><span class="p">.</span><span class="nx">find_or_create</span><span class="p">({</span> <span class="nx">seed</span><span class="o">:</span> <span class="nx">seed</span> <span class="p">});</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  </pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-8">#</a>               </div>               <p><code>controller.wake()</code> will have a route of <code>#/wake</code>, and it will initialize its own <code>locations</code>.
+Since there is no <code>WakeView</code> defined, it will display the parameters directly in a template 
+of <code>/haml/wake.haml</code>.</p>
+
+<p>This also defines <code>route_to_wake()</code>.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;wake&#39;</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-9">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-9">#</a>               </div>               <p><code>controller.bed({...})</code> will have a route of <code>#/:seed/bed</code> and will use a <code>BedView</code> to
+display a template of <code>/haml/bed.haml</code>.</p>
+
+<p>This also defines <code>route_to_bed({ seed: '42' })</code>. Thanks to the translations, you can
+also call <code>route_to_bed({ locations: location_collection })</code>.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;bed&#39;</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">route</span><span class="o">:</span> <span class="s1">&#39;:seed/bed&#39;</span>
+    <span class="p">})</span>
+  </pre></div>             </td>           </tr>                               <tr id="section-10">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-10">#</a>               </div>               <p><code>controller.location({...})</code> will have a route of <code>#/:seed/location_id</code> and will use a 
+<code>LocationView</code> to display a template of <code>/haml/bed.haml</code>.</p>
+
+<p>This also defines <code>route_to_location({ seed: '42', location_id: '6' })</code>. Thanks to the 
+translations, you can also call <code>route_to_location({ location: location })</code>. Faux deals
+with some magic like extracting <code>location.collection</code> to get <code>locations</code> and <code>location.id</code>
+to get <code>location_id</code>. This is all possible because of the translations and the use of
+naming conventions.</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{</span>
+      <span class="nx">route</span><span class="o">:</span> <span class="s1">&#39;:seed/:location_id&#39;</span>
+    <span class="p">})</span>
+    </pre></div>             </td>           </tr>                               <tr id="section-11">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-11">#</a>               </div>               <p>ends a <code>.begin({...})</code> scope</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+  
+    <span class="p">;</span></pre></div>             </td>           </tr>                               <tr id="section-12">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-12">#</a>               </div>               <p>Kick off the application, and invoke <code>controller.wake()</code> if no fragment is provided.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">controller</span><span class="p">.</span><span class="nx">define_all</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span> <span class="o">||</span> <span class="nx">controller</span><span class="p">.</span><span class="nx">wake</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+	
+<span class="p">})();</span></pre></div>             </td>           </tr>                               <tr id="section-13">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-13">#</a>               </div>               <p>This file is part of <a href="http://github.com/unspace/misadventure">Misadventure</a>, an extremely 
+simple <a href="http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html">adventure</a> game written as an example app for <a href="https://github.com/unspace/faux">Faux</a>.
+You can play the game <a href="http://unspace.github.com/misadventure">here</a>.</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-14">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-14">#</a>               </div>               <h2>License Terms</h2>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/*</span>
+
+<span class="cm">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="cm">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="cm">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="cm">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="cm">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="cm">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="cm">THE SOFTWARE.</span>
+
+<span class="cm">To the extent possible under law, Unspace Interactive has waived all copyright </span>
+<span class="cm">and related or neighboring rights to the software, except for those portions</span>
+<span class="cm">that are otherwise licensed.</span>
+
+<span class="cm">This work is published from Canada.</span>
+
+<span class="cm">*/</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

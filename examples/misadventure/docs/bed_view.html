@@ -1,0 +1,84 @@
+<!DOCTYPE html>  <html> <head>   <title>bed_view.js</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="bed_view.html">                 bed_view.js               </a>                                           <a class="source" href="controller.html">                 controller.js               </a>                                           <a class="source" href="location.html">                 location.js               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               bed_view.js             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-1">#</a>               </div>                            </td>             <td class="code">               <div class="highlight"><pre><span class="p">;(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-2">#</a>               </div>               <h2>BedView</h2>
+
+<p>The <code>BedView</code> handles what the user sees when they escape the maze and "wake up in their own bed."</p>
+
+<p>As noted above, view classes in Backbone.js are usually all about displaying updated models and handling events.
+Since Misadventure's models are read-only, we don't need to worry about much in the way of wiring
+change events.</p>
+
+<p>The main piece of business in <code>BedView</code> is some <code>jQuery</code> work yo style a map of the maze. This could
+be embedded in the DOM, but it is far more elegant to put it here.</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-3">#</a>               </div>               <p>Define <code>BedView</code> in global scope.</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nb">window</span><span class="p">.</span><span class="nx">BedView</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  </pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-4">#</a>               </div>               <p>Faux composes <code>.after_render()</code> with the main <code>.render()</code> code that displays <code>/haml/bed.haml</code>.
+The template will have drawn a table with one cell per location. Now <code>.after_render()</code> will
+decorate the table.</p>
+
+<p>One key piece of this code checks to see whether the browser supports link color sniffing.
+Users are shown a different color for links that have been visited. If javascript can see that
+same change of color, we can determine which locations the user has visited without needing
+to store them in memory. We then show them as white, while the unvisited locations are yellow.</p>
+
+<p>If we can't sniff link colors, we show all locations as white.</p>
+
+<p>We also check for passageways between locations and set styles on the table cells accordingly/
+CSS renders a passageway by removing the boder between cells, the overall effect is to display a maze.</p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">after_render</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">link_el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">);</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">link_el</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;link_test&#39;</span><span class="p">);</span>
+    <span class="nx">link_el</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">route_to_bed</span><span class="p">({</span><span class="nx">locations</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">locations</span><span class="p">});</span> <span class="c1">// this page!</span>
+    <span class="kd">var</span> <span class="nx">color</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_get_computed_color</span><span class="p">(</span><span class="nx">link_el</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">cant_sniff</span> <span class="o">=</span> <span class="p">(</span><span class="nx">color</span> <span class="o">!=</span> <span class="s1">&#39;rgb(255, 0, 0)&#39;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">locations</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">location</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">cell</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">id</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">cant_sniff</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;visited&#39;</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">link_el</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">controller</span><span class="p">.</span><span class="nx">route_to_location</span><span class="p">({</span><span class="nx">location</span><span class="o">:</span><span class="nx">location</span><span class="p">});</span>
+        <span class="nx">color</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_get_computed_color</span><span class="p">(</span><span class="nx">link_el</span><span class="p">);</span>
+        <span class="p">(</span><span class="nx">color</span> <span class="o">==</span> <span class="s1">&#39;rgb(255, 0, 0)&#39;</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;visited&#39;</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">passage_north</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;passage_north&#39;</span><span class="p">);</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">passage_east</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;passage_east&#39;</span><span class="p">);</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">passage_south</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;passage_south&#39;</span><span class="p">);</span>
+      <span class="nx">location</span><span class="p">.</span><span class="nx">passage_west</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="nx">cell</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;passage_west&#39;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="k">this</span><span class="p">);</span>
+  <span class="p">},</span>
+  
+  </pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-5">#</a>               </div>               <p>A helper for <code>after_render</code></p>             </td>             <td class="code">               <div class="highlight"><pre>  <span class="nx">_get_computed_color</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">fn</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">isUndefined</span><span class="p">(</span><span class="nx">el</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">document</span><span class="p">.</span><span class="nx">defaultView</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">el</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">fn</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">el</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">el</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">_get_computed_color</span> <span class="o">=</span> <span class="nx">fn</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">fn</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+  <span class="p">}</span>
+
+<span class="p">});</span>
+
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-6">#</a>               </div>               <p>This file is part of <a href="http://github.com/unspace/misadventure">Misadventure</a>, an extremely 
+simple <a href="http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html">adventure</a> game written as an example app for <a href="https://github.com/unspace/faux">Faux</a>.
+You can play the game <a href="http://unspace.github.com/misadventure">here</a>.</p>             </td>             <td class="code">               <div class="highlight"><pre></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="octowrap">                 <a class="octothorpe" href="#section-7">#</a>               </div>               <h2>License Terms</h2>             </td>             <td class="code">               <div class="highlight"><pre><span class="cm">/*</span>
+
+<span class="cm">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="cm">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="cm">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="cm">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="cm">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="cm">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="cm">THE SOFTWARE.</span>
+
+<span class="cm">To the extent possible under law, Unspace Interactive has waived all copyright </span>
+<span class="cm">and related or neighboring rights to the software, except for those portions</span>
+<span class="cm">that are otherwise licensed.</span>
+
+<span class="cm">This work is published from Canada.</span>
+
+<span class="cm">*/</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
