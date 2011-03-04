@@ -58,18 +58,18 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [core]: http://www.ridecore.ca "CORE BMX and Boards"
 [couch]: http://couchdb.apache.org/
 [cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
-[c]: /unspace/faux/tree/master/doc/config.md#readme
+[c]: /raganwald/faux/tree/master/doc/config.md#readme
 [functional]: http://osteele.com/sources/javascript/functional/
-[f]: /unspace/faux/tree/master/doc/functions.md#readme
+[f]: /raganwald/faux/tree/master/doc/functions.md#readme
 [haml]: http://haml-lang.com/ "#haml"
 [jamie]: http://github.com/jamiebikies
 [k]: https://github.com/raganwald/JQuery-Combinators
 [mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
-[m]: /unspace/faux/tree/master/doc/methods.md#readme
+[m]: /raganwald/faux/tree/master/doc/methods.md#readme
 [prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
 [raganwald]: http://github.com/raganwald
 [read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
-[readme]: /unspace/faux/tree/master/docREADME.md#readme
+[readme]: /raganwald/faux/tree/master/docREADME.md#readme
 [sinatra]: http://www.sinatrarb.com/
 [spa]: http://en.wikipedia.org/wiki/Single_page_application "Single Page Application"
 [spi]: http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php "The Single Page Interface Manifesto"
@@ -77,15 +77,15 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [s]: http://github.com/quirkey/sammy "sammy_js"
 [todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
 [t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
-[v]: /unspace/faux/tree/master/doc/more_about_views.md#readme
-[w]: /unspace/faux/tree/master/doc/writing.md#readme
+[v]: /raganwald/faux/tree/master/doc/more_about_views.md#readme
+[w]: /raganwald/faux/tree/master/doc/writing.md#readme
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"
 [idrc]: http://publicwebsite.idrc.ca/
 [tti]: http://publicwebsite.idrc.ca/EN/Programs/Social_and_Economic_Policy/Think_Tank_Initiative/Pages/default.aspx
 [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
-[f]: https://github.com/unspace/faux
-[play]: http://unspace.github.com/misadventure/
-[source]: http://github.com/unspace/misadventure
+[f]: https://github.com/raganwald/faux
+[play]: http://raganwald.github.com/faux/examples/misadventure/
+[source]: http://github.com/raganwald/misadventure
 [b]: http://documentcloud.github.com/backbone/
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
@@ -95,6 +95,6 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [st]: http://seventhings.liftweb.net/
 [lazy_lift]: http://seventhings.liftweb.net/lazy "Lift has built-in Lazy Loading"
 [parallel_lift]: http://seventhings.liftweb.net/parallel "Lift can parallelize page rendering"
-[kt]: http://raganwald.github.com/knob_and_tube
-[np]: http://raganwald.github.com/nonpareil
+[kt]: http://raganwald.github.com/faux/examples/knob_and_tube
+[np]: http://raganwald.github.com/faux/examples/nonpareil
 [wiring]: http://seventhings.liftweb.net/wiring

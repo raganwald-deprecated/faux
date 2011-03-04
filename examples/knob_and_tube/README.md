@@ -322,13 +322,13 @@ Lift is a web development framework based on the Scala programming language. It 
 
 p.s. Faux is actually smart enough to wire _any_ view's render method to its single model's change event by convention, but we wanted to show you how easy it is to do it by hand, because you may want to have more complex dependencies such as a single view depending on multiple models.
 
-[f]: http://github.com/unspace/faux
-[kt]: http://raganwald.github.com/knob_and_tube
-[np]: http://raganwald.github.com/nonpareil
+[f]: http://github.com/raganwald/faux
+[kt]: http://raganwald.github.com/faux/examples/knob_and_tube
+[np]: http://raganwald.github.com/faux/examples/nonpareil
 [lazy_lift]: http://seventhings.liftweb.net/lazy "Lift has built-in Lazy Loading"
 [parallel_lift]: http://seventhings.liftweb.net/parallel "Lift can parallelize page rendering"
 [mis]: http://github.com/
-[play]: http://unspace.github.com/misadventure/
+[play]: http://raganwald.github.com/faux/examples/misadventure/
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
 [piii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_iii.md#readme

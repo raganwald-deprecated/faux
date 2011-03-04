@@ -72,8 +72,8 @@
 })(window);
 
 // This file is part of [Nonpareil](http://github.com/raganwald/nonpareil), 
-// an example app for [Faux](https://github.com/unspace/faux).
-// You can see it [here](http://raganwald.github.com/nonpareil).
+// an example app for [Faux](https://github.com/raganwald/faux).
+// You can see it [here](http://raganwald.github.com/faux/examples/nonpareil).
 
 // License Terms
 // ---

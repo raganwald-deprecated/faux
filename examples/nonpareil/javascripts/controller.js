@@ -72,8 +72,8 @@ $(function() {
 	
 })();
 
-// This file is part of [Nonpareil](http://github.com/unspace/misadventure), an extremely 
-// simple [adventure][a] game written as an example app for [Faux](https://github.com/unspace/faux).
+// This file is part of [Nonpareil](http://github.com/raganwald/misadventure), an extremely 
+// simple [adventure][a] game written as an example app for [Faux](https://github.com/raganwald/faux).
 
 // License Terms
 // ---

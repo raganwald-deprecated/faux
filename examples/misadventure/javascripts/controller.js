@@ -108,9 +108,9 @@ $(function() {
 	
 })();
 
-// This file is part of [Misadventure](http://github.com/unspace/misadventure), an extremely 
-// simple [adventure][a] game written as an example app for [Faux](https://github.com/unspace/faux).
-// You can play the game [here](http://unspace.github.com/misadventure).
+// This file is part of [Misadventure](http://github.com/raganwald/misadventure), an extremely 
+// simple [adventure][a] game written as an example app for [Faux](https://github.com/raganwald/faux).
+// You can play the game [here](http://raganwald.github.com/faux/examples/misadventure).
 // [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
 
 // License Terms

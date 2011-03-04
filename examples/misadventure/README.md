@@ -52,16 +52,16 @@ that are otherwise licensed.
 *Misadventure's first user was Thomas Ashton Braithwaite*
 
 [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
-[f]: https://github.com/unspace/faux
-[play]: http://unspace.github.com/misadventure/
+[f]: https://github.com/raganwald/faux
+[play]: http://raganwald.github.com/faux/examples/misadventure/
 [r]: http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorithm
 [j]: http://weblog.jamisbuck.org/
 [rb]: http://reginald.braythwayt.com
-[source]: http://github.com/unspace/misadventure
+[source]: http://github.com/raganwald/misadventure
 [docco]: https://github.com/raganwald/homoiconic/blob/master/2010/11/docco.md "A new way to think about programs"
-[cjs]: http://unspace.github.com/misadventure/docs/controller.html
-[bvjs]: http://unspace.github.com/misadventure/docs/bed_view.html
-[ljs]: http://unspace.github.com/misadventure/docs/location.html
+[cjs]: http://raganwald.github.com/faux/examples/misadventure/docs/controller.html
+[bvjs]: http://raganwald.github.com/faux/examples/misadventure/docs/bed_view.html
+[ljs]: http://raganwald.github.com/faux/examples/misadventure/docs/location.html
 [s]: http://yayinternets.com/
 [ui]: http://unspace.ca
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme

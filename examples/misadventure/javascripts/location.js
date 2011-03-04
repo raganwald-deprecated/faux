@@ -288,7 +288,7 @@ window.LocationView = Backbone.View.extend({
   
   // The text description is a clumsy homage to [Adventure][play].
   //
-  // [play]: http://unspace.github.com/misadventure/
+  // [play]: http://raganwald.github.com/faux/examples/misadventure/
   text_description: (function () {
     var descriptions = ['a hole with no way out',
       'a little maize of twisting passages',
@@ -337,9 +337,9 @@ window.LocationView = Backbone.View.extend({
 
 })(jQuery);
 
-// This file is part of [Misadventure](http://github.com/unspace/misadventure), an extremely 
-// simple [adventure][a] game written as an example app for [Faux](https://github.com/unspace/faux).
-// You can play the game [here](http://unspace.github.com/misadventure).
+// This file is part of [Misadventure](http://github.com/raganwald/misadventure), an extremely 
+// simple [adventure][a] game written as an example app for [Faux](https://github.com/raganwald/faux).
+// You can play the game [here](http://raganwald.github.com/faux/examples/misadventure).
 // [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
 
 // License Terms

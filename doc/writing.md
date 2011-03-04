@@ -457,18 +457,18 @@ This code automatically massages any `models` parameter into `model: { models: [
 [core]: http://www.ridecore.ca "CORE BMX and Boards"
 [couch]: http://couchdb.apache.org/
 [cps]: http://en.wikipedia.org/wiki/Continuation-passing_style "Continuation-passing style - Wikipedia, the free encyclopedia"
-[c]: /unspace/faux/tree/master/doc/config.md#readme
+[c]: /raganwald/faux/tree/master/doc/config.md#readme
 [functional]: http://osteele.com/sources/javascript/functional/
-[f]: /unspace/faux/tree/master/doc/functions.md#readme
+[f]: /raganwald/faux/tree/master/doc/functions.md#readme
 [haml]: http://haml-lang.com/ "#haml"
 [jamie]: http://github.com/jamiebikies
 [k]: https://github.com/raganwald/JQuery-Combinators
 [mvp]:  http://github.com/raganwald/homoiconic/blob/master/2010/10/vc_without_m.md#readme "MVC, PVC and (¬M)VC"
-[m]: /unspace/faux/tree/master/doc/methods.md#readme
+[m]: /raganwald/faux/tree/master/doc/methods.md#readme
 [prg]: http://en.wikipedia.org/wiki/Post/Redirect/Get
 [raganwald]: http://github.com/raganwald
 [read]: http://weblog.raganwald.com/2007/04/writing-programs-for-people-to-read.html "Writing programs for people to read"
-[readme]: /unspace/faux/tree/master/docREADME.md#readme
+[readme]: /raganwald/faux/tree/master/docREADME.md#readme
 [sinatra]: http://www.sinatrarb.com/
 [spa]: http://en.wikipedia.org/wiki/Single_page_application "Single Page Application"
 [spi]: http://itsnat.sourceforge.net/php/spim/spi_manifesto_en.php "The Single Page Interface Manifesto"
@@ -476,6 +476,6 @@ This code automatically massages any `models` parameter into `model: { models: [
 [s]: http://github.com/quirkey/sammy "sammy_js"
 [todo]: http://documentcloud.github.com/backbone/examples/todos/index.html
 [t]: https://github.com/raganwald/homoiconic/blob/master/2008-10-30/thrush.markdown
-[v]: /unspace/faux/tree/master/doc/more_about_views.md#readme
-[w]: /unspace/faux/tree/master/doc/writing.md#readme
+[v]: /raganwald/faux/tree/master/doc/more_about_views.md#readme
+[w]: /raganwald/faux/tree/master/doc/writing.md#readme
 [wicmajsp]: http://raganwald.posterous.com/why-i-call-myself-a-javascript-programmer "Why I Call Myself a Javascript Programmer"

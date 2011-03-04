@@ -269,13 +269,13 @@ Lift is a web development framework based on the Scala programming language. It 
 
 Also, [Fibonacci Numbers with Wiring][kt] is a similar application, but shows how to extend it to have views that update themselves when models change.
 
-[f]: http://github.com/unspace/faux
-[np]: http://raganwald.github.com/nonpareil
-[kt]: http://raganwald.github.com/knob_and_tube
+[f]: http://github.com/raganwald/faux
+[np]: http://raganwald.github.com/faux/examples/nonpareil
+[kt]: http://raganwald.github.com/faux/examples/knob_and_tube
 [lazy_lift]: http://seventhings.liftweb.net/lazy "Lift has built-in Lazy Loading"
 [parallel_lift]: http://seventhings.liftweb.net/parallel "Lift can parallelize page rendering"
 [mis]: http://github.com/
-[play]: http://unspace.github.com/misadventure/
+[play]: http://raganwald.github.com/faux/examples/misadventure/
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
 [piii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_iii.md#readme

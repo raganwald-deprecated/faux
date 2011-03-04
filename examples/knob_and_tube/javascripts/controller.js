@@ -83,8 +83,8 @@ $(function() {
 })(window);
 
 // This file is part of [Nonpareil](http://github.com/raganwald/knob_and_tube), 
-// an example app for [Faux](https://github.com/unspace/faux).
-// You can see it [here](http://raganwald.github.com/knob_and_tube).
+// an example app for [Faux](https://github.com/raganwald/faux).
+// You can see it [here](http://raganwald.github.com/faux/examples/knob_and_tube).
 
 // License Terms
 // ---
