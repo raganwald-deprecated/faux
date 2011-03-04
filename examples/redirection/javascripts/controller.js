@@ -6,26 +6,25 @@ var controller = new Faux.Controller({
   partial: 'haml',
   partial_suffix: '.haml',
   javascript: 'javascripts',
-  title: 'Premature Termination'
+  title: 'Example Redirection'
 });
 
 
 controller
-  .method('secure', {
+  .begin({
     before_display: function () {
-      controller.login();
+      controller.substitute();
       return false;
-    },
-    after_display: function () {
-      alert("We shouldn't see this")
-    }
-  })
-  .method('login');
+      }
+    })
+    .method('original')
+    .end()
+  .method('substitute');
 
 $(function() {
   controller.define_all(function () {
     Backbone.history.start();
-    window.location.hash || controller.secure();
+    window.location.hash || controller.original();
   });
 });
 	
