@@ -71,7 +71,7 @@
   
 })(window);
 
-// This file is part of [Nonpareil](http://github.com/raganwald/nonpareil), 
+// This file is part of [Nonpareil](http://github.com/raganwald/faux/examples/nonpareil), 
 // an example app for [Faux](https://github.com/raganwald/faux).
 // You can see it [here](http://raganwald.github.com/faux/examples/nonpareil).
 
