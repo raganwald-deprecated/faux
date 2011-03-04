@@ -83,9 +83,9 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [idrc]: http://publicwebsite.idrc.ca/
 [tti]: http://publicwebsite.idrc.ca/EN/Programs/Social_and_Economic_Policy/Think_Tank_Initiative/Pages/default.aspx
 [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
-[f]: https://github.com/raganwald/faux
-[play]: http://raganwald.github.com/faux/examples/misadventure/
-[source]: http://github.com/raganwald/faux/tree/master/examples/misadventure
+[f]: https://github.com/unspace/faux
+[play]: http://unspace.github.com/faux/examples/misadventure/
+[source]: http://github.com/unspace/faux/tree/master/examples/misadventure
 [b]: http://documentcloud.github.com/backbone/
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
@@ -95,6 +95,6 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [st]: http://seventhings.liftweb.net/
 [lazy_lift]: http://seventhings.liftweb.net/lazy "Lift has built-in Lazy Loading"
 [parallel_lift]: http://seventhings.liftweb.net/parallel "Lift can parallelize page rendering"
-[kt]: http://raganwald.github.com/faux/examples/knob_and_tube
-[np]: http://raganwald.github.com/faux/examples/nonpareil
+[kt]: http://unspace.github.com/faux/examples/knob_and_tube
+[np]: http://unspace.github.com/faux/examples/nonpareil
 [wiring]: http://seventhings.liftweb.net/wiring
