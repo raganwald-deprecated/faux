@@ -72,7 +72,7 @@ $(function() {
 	
 })();
 
-// This file is part of [Nonpareil](http://github.com/raganwald/faux/examples/misadventure), an extremely 
+// This file is part of [Nonpareil](http://github.com/raganwald/faux/tree/master/examples/misadventure), an extremely 
 // simple [adventure][a] game written as an example app for [Faux](https://github.com/raganwald/faux).
 
 // License Terms

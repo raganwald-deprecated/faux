@@ -82,7 +82,7 @@ $(function() {
 	
 })(window);
 
-// This file is part of [Nonpareil](http://github.com/raganwald/faux/examples/knob_and_tube), 
+// This file is part of [Nonpareil](http://github.com/raganwald/faux/tree/master/examples/knob_and_tube), 
 // an example app for [Faux](https://github.com/raganwald/faux).
 // You can see it [here](http://raganwald.github.com/faux/examples/knob_and_tube).
 

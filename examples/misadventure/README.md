@@ -57,7 +57,7 @@ that are otherwise licensed.
 [r]: http://weblog.jamisbuck.org/2011/1/12/maze-generation-recursive-division-algorithm
 [j]: http://weblog.jamisbuck.org/
 [rb]: http://reginald.braythwayt.com
-[source]: http://github.com/raganwald/faux/examples/misadventure
+[source]: http://github.com/raganwald/faux/tree/master/examples/misadventure
 [docco]: https://github.com/raganwald/homoiconic/blob/master/2010/11/docco.md "A new way to think about programs"
 [cjs]: http://raganwald.github.com/faux/examples/misadventure/docs/controller.html
 [bvjs]: http://raganwald.github.com/faux/examples/misadventure/docs/bed_view.html

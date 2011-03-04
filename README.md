@@ -85,7 +85,7 @@ Two of those things are [Lazy Loading][lazy_lift] and [Parallel Page Rendering][
 [a]: http://www.digitalhumanities.org/dhq/vol/001/2/000009/000009.html
 [f]: https://github.com/raganwald/faux
 [play]: http://raganwald.github.com/faux/examples/misadventure/
-[source]: http://github.com/raganwald/faux/examples/misadventure
+[source]: http://github.com/raganwald/faux/tree/master/examples/misadventure
 [b]: http://documentcloud.github.com/backbone/
 [pi]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_i.md#readme
 [pii]: http://github.com/raganwald/homoiconic/tree/master/2011/01/misadventure_part_ii.md#readme
