@@ -1,4 +1,4 @@
-;(function () {
+;(function (globals) {
 
 var controller = new Faux.Controller({
   save_location: true,
@@ -9,21 +9,25 @@ var controller = new Faux.Controller({
   title: 'Const'
 });
 
-var PseudoFetch
+var some_constant_model = new Backbone.Model({
+    hours: 3,
+    minutes: 30
+  });
 
 controller
-  .method('const', {
-    
+  .method('constant', {
+    'model=': some_constant_model,
+    clazz: Backbone.View
   });
 
 $(function() {
   controller.define_all(function () {
     Backbone.history.start();
-    window.location.hash || controller.original();
+    window.location.hash || controller.constant();
   });
 });
 	
-})();
+})(window);
 
 // License Terms
 // ---
