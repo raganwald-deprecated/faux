@@ -5,18 +5,22 @@ var controller = new Faux.Controller({
   element_selector: '.content',
   partial: 'haml',
   partial_suffix: '.haml',
-  javascript: 'javascripts',
-  title: 'Const'
+  javascript: 'javascripts'
 });
 
-var some_constant_model = new Backbone.Model({
-    hours: 3,
-    minutes: 30
-  });
+var lazy_model = new (Backbone.Model.extend({
+  // The 'fetch' method simulates a request to the server
+  fetch : function(options) {
+    options || (options = {});
+    if (!this.set({message: "Hello, Lazy World"}, options)) return false;
+    if (options.success) options.success(this, {message: "Hello, Lazy World"});
+    return this;
+  }
+}))();
 
 controller
   .method('constant', {
-    'model=': some_constant_model,
+    'model=': lazy_model,
     clazz: Backbone.View
   });
 
