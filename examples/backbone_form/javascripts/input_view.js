@@ -2,6 +2,10 @@
 
 globals.InputView = Backbone.View.extend({
   
+  initialize: function () {
+    this.text = this.options.text || 'Hello *there*';
+  },
+  
   events: {
     'submit' : 'preview'
   },

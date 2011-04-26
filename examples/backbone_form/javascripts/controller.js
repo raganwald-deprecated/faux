@@ -1,7 +1,6 @@
 ;(function () {
 
 var controller = new Faux.Controller({
-  save_location: true,
   element_selector: '.content',
   partial: 'haml',
   partial_suffix: '.haml',
@@ -11,13 +10,17 @@ var controller = new Faux.Controller({
 
 
 controller
-  .method('input')
-  .method('output');
+  .method('input', {
+    route: '/input/:text'
+  })
+  .method('output', {
+    route: '/output/:text'
+  });
 
 $(function() {
   controller.define_all(function () {
     Backbone.history.start();
-    window.location.hash || controller.input();
+    window.location.hash || controller.input({ text: 'Hello *Faux*' });
   });
 });
 	
