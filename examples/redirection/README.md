@@ -10,4 +10,4 @@ Calling `controller.substitute()` is exactly the same thing invoking the url fra
 
 But this example isn't going to do any of that. It's just going to redirect. There are two pages: the `original` and the `substitute`. When a user tries to get to the original, he ends up at the substitute. Reading the code, you will see that the redirection happens in a `before_display` function. This is where you would put code that checks preferences. If you need to check preferences for many different controller methods, you could use a scope so that they would all share the same `before_display` code.
 
-There are various alerts scattered through the code. None of these should appear. Their purpose is to demonstrate that having redirected, the original controller method is entirely abandoned. This happens when a `before_display` method returns false.
+There are various alerts scattered through the code. None of these should appear. Their purpose is to demonstrate that having redirected, the original controller method is entirely abandoned. This happens when a `before_display` method returns `false`.
